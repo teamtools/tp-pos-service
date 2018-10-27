@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package go.micro.srv.pos;
+
+service PosService {
+  rpc CreatePos(Pos) returns (Response) {}
+}
+
+message Pos {
+  string id = 1;
+  string name = 2;
+  bool active = 3;
+  //TODO startdate
+  // TODO enddate
+  // TODO paymentMethonds
+  // TODO categories
+  // TODO Items
+}
+
+message Response {
+  bool created = 1;
+  Pos pos = 2;
+}
